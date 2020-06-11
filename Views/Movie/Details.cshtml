@@ -1,0 +1,24 @@
+@model Bookstore.Models.Movie
+
+@{
+    ViewData["Title"] = "Детали";
+}
+
+<h1>Детали</h1>
+<div style="text-align: left;">
+ <span style="float:right;">
+<div class="display-field">  
+<img src="@Url.Content(@Model.Picture)" alt="Слика" />  
+</div> 
+ <p>@Html.DisplayFor(model => model.Rating)</p>
+ </span>
+<p style="text-align: center;"> @Html.DisplayFor(model => model.Title)</p>
+<p>Снимен според:@Html.DisplayFor(model => model.Book.Title) </p>
+<p> Дата на излегување: @Html.DisplayFor(model => model.ReleaseDate)</p>
+ <p> @Html.DisplayFor(model => model.Synopsis)</p>
+ <p>Trailer @Html.DisplayFor(model => model.Trailer) </p>
+</div>
+ 
+    <a asp-action="Edit" asp-route-id="@Model.MovieID">Измени</a> |
+    <a asp-action="Index">Назад</a>
+</div>

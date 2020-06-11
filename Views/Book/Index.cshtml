@@ -1,0 +1,84 @@
+@model IEnumerable<Bookstore.Models.Book>
+
+@{
+    ViewData["Title"] = "Книги";
+}
+
+   <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-black border-bottom box-shadow mb-3" style="background-color: black;">
+            <div class="container" style="background-color: black;" >
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" style="background-color: black;">
+                    <ul class="navbar-nav flex-grow-1"style="background-color: black;">
+                        <li class="nav-item">
+                           <a class="nav-link text-dark" style="font-size:larger;font-weight:bold;" 
+                           asp-area="" asp-controller="Book" asp-action="Genre"><div style="color: white;">Трилер</div></a>
+                                </li>
+                                &ensp;
+                                <li class="nav-item" >                                                             
+                                 <a class="nav-link text-dark" style="font-size:larger;font-weight:bold;"  
+                                 asp-area="" asp-controller="Book" asp-action="Genre"><div style="color: white;">Мистерија</div></a>
+                                </li>   &ensp;
+                                <li class="nav-item" >                                                             
+                                 <a class="nav-link text-dark" style="font-size:larger;font-weight:bold;" 
+                                  asp-area="" asp-controller="Book" asp-action="Genre"><div style="color: white;">Комедија</div></a>
+                                </li>   &ensp;
+                                <li class="nav-item">
+                                <a class="nav-link text-dark"style="font-size:larger;font-weight:bold;" 
+                                asp-area="" asp-controller="Book" asp-action="Genre"><div style="color: white;">Фантазија</div></a>
+                                  </li>  &ensp;
+                                  <li class="nav-item">
+                                <a class="nav-link text-dark" style="font-size:larger;font-weight:bold;" 
+                                 asp-area="" asp-controller="Book" asp-action="Genre"><div style="color: white;">Новела</div></a>
+                                 </li>  &ensp;
+                                 <li class="nav-item" >                                                             
+                                 <a class="nav-link text-dark" style="font-size:larger;font-weight:bold;" 
+                                  asp-area="" asp-controller="Book" asp-action="Genre"><div style="color: white;">Биографија</div></a>
+                                </li>   &ensp; 
+                                <li class="nav-item" >                                                             
+                                 <a class="nav-link text-dark" style="font-size:larger;font-weight:bold;" 
+                                  asp-area="" asp-controller="Book" asp-action="Genre"><div style="color: white;">Класици</div></a>
+                                </li>  &ensp;
+                                <li class="nav-item" >                                                             
+                                 <a class="nav-link text-dark" style="font-size:larger;font-weight:bold;" 
+                                 asp-area="" asp-controller="Book" asp-action="Genre"><div style="color: white;">Митологија</div></a>
+                                </li>  &ensp;                               
+                                <li class="nav-item" >                                                             
+                                 <a class="nav-link text-dark" style="font-size:larger;font-weight:bold;" 
+                                 asp-area="" asp-controller="Book" asp-action="Genre"> <div style="color: white;">Поезија</div></a>
+                                </li>                           
+                        </ul>
+                </div>
+            </div>
+        </nav>
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color" > 
+        <p>
+            <div class="text-center" style="font-size: large; font-weight:bold">
+             Пребарувај по наслов <input style="border-radius: 15px;border: 1px #000 solid;padding: 5px 5px 5px 25px;" type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+            <input style="box-sizing: border-box; background-color: orange; font-weight:bold; color: white" type="submit" value="Барај" class="btn btn-default" /> 
+            </div>
+        </p>
+    </div>
+</form>
+<h2>Сите книги</h2>
+<p>
+    <a asp-action="Create">Додади книга</a>
+</p>
+
+@foreach (var item in Model) {
+    <div class="row">
+    <div id="dataListItem" class="col-md-4">
+        
+                <img src="~/pictures/@item.Picture"
+                     height="300" width="150"
+                     asp-append-version="true"/>   
+            <div style="text-align: center;"> <a asp-action="Details" asp-route-id="@item.BooksID"> @Html.DisplayFor(modelItem => item.Title) </a>
+           
+               <div>@Html.DisplayFor(modelItem => item.Price) денари</div>
+          </div>
+           <div>
+                <a asp-action="Edit" asp-route-id="@item.BooksID">Измени</a> |
+                <a asp-action="Delete" asp-route-id="@item.BooksID">Избриши</a>    
+          </div>   
+      </div>
+</div>          
+}

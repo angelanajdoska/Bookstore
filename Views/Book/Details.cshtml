@@ -1,0 +1,27 @@
+@model Bookstore.Models.Book
+
+@{
+    ViewData["Title"] = "Детали";
+}
+
+<h1>Детали</h1>
+<div style="text-align: left;">
+ <span style="float:right;">
+  <div class="display-field">  
+<img src="@Url.Content(@Model.Picture)" alt="Слика" />  
+</div> 
+  <p> @Html.DisplayFor(model => model.ReleaseDate) &ensp; 
+   @Html.DisplayFor(model => model.Publisher) </p> 
+  <p>Цена:</p>@Html.DisplayFor(model => model.Price)
+  </span>   
+  <p style="text-align: center;">@Html.DisplayFor(model => model.Title)</p> 
+  <p>Автор:</p>  @Html.DisplayFor(model => model.Author.FullName)
+  <p>Оригинален наслов:</p>  @Html.DisplayFor(model => model.OriginalTitle) &ensp; 
+   Број на страни:</p>@Html.DisplayFor(model => model.NumberofPages)
+   <p>@Html.DisplayFor(model => model.Synopsis)</p>
+</div>
+  
+<div>    
+    <a asp-action="Edit" asp-route-id="@Model.BooksID">Измени</a> |
+    <a asp-action="Index">Назад</a>
+</div>

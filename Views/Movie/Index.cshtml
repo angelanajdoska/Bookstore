@@ -1,0 +1,32 @@
+@model IEnumerable<Bookstore.Models.Movie>
+
+@{
+    ViewData["Title"] = "Филмови";
+}
+
+  
+
+<h2>Филмови снимени според книги</h2>
+
+<p>
+    <a asp-action="Create">Додади филм</a>
+</p>
+
+@foreach (var item in Model) {
+    <div class="row">
+    <div id="dataListItem" class="col-md-4">
+        
+                
+             <p><img src="~/pictures/@item.Picture"
+                     height="300" width="150"
+                     asp-append-version="true"/> </p>                
+            
+               <p><a asp-action="Details" asp-route-id="@item.MovieID"> @Html.DisplayFor(modelItem => item.Title)</a></p>
+            
+               <p> @Html.DisplayFor(modelItem => item.Rating)</p>
+           
+              <p><a asp-action="Edit" asp-route-id="@item.MovieID">Измени</a> |
+                <a asp-action="Delete" asp-route-id="@item.MovieID">Избриши</a></p>    
+       </div>   
+      </div>            
+}

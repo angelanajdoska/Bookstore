@@ -1,0 +1,27 @@
+@model Bookstore.Models.Author
+
+@{
+    ViewData["Title"] = "Детали";
+}
+
+<h1>Детали</h1>
+<div style="text-align: left;">
+ <span style="float:right;">
+<div class="display-field">  
+<img src="@Url.Content(@Model.Picture)" alt="Слика" />  
+</div> 
+<p>Награди: @Html.DisplayFor(model => model.Rewards)</p>
+ </span>
+<p style="text-align: center;"> @Html.DisplayFor(model => model.FullName)</p>      
+ <p> Дата на раѓање: @Html.DisplayFor(model => model.DateofBirth)</p>
+@if(Model.DateofDeath!=null)
+{
+  <p>Дата на умирање: @Html.DisplayFor(model => model.DateofDeath)</p>
+}
+<p>@Html.DisplayFor(model => model.Biography)</p>
+ <p>Книги кои ги напишал: @Html.DisplayFor(model => model.Books.Title)</p>
+</div>
+<div>    
+    <a asp-action="Edit" asp-route-id="@Model.AuthorID">Измени</a> |
+    <a asp-action="Index">Назад</a>
+</div>
