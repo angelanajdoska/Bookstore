@@ -89,7 +89,6 @@ namespace Bookstore.Controllers
                     ReleaseDate=model.ReleaseDate,
                     Publisher = model.Publisher,
                     Movie= model.Movie,
-                    Authors=model.Authors,
                     Author=model.Author,
                     Authorid=model.Authorid
                 };
@@ -130,7 +129,6 @@ namespace Bookstore.Controllers
                     ReleaseDate=book.ReleaseDate,
                     Publisher = book.Publisher,
                     Movie= book.Movie,
-                    Authors=book.Authors,
                     Author=book.Author,
                     Authorid=book.Authorid
                 };
@@ -169,7 +167,6 @@ namespace Bookstore.Controllers
                     ReleaseDate=vm.ReleaseDate,
                     Publisher = vm.Publisher,
                     Movie= vm.Movie,
-                    Authors=vm.Authors,
                     Author=vm.Author,
                     Authorid=vm.Authorid
                 };

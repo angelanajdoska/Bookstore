@@ -29,9 +29,6 @@ namespace Bookstore.Migrations
                     b.Property<string>("Biography")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("BooksId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("DateofBirth")
                         .HasColumnType("datetime2");
 
@@ -51,8 +48,6 @@ namespace Bookstore.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("AuthorID");
-
-                    b.HasIndex("BooksId");
 
                     b.ToTable("Author");
                 });
@@ -134,15 +129,6 @@ namespace Bookstore.Migrations
                     b.HasIndex("BookId");
 
                     b.ToTable("Movie");
-                });
-
-            modelBuilder.Entity("Bookstore.Models.Author", b =>
-                {
-                    b.HasOne("Bookstore.Models.Book", "Books")
-                        .WithMany("Authors")
-                        .HasForeignKey("BooksId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Bookstore.Models.Book", b =>

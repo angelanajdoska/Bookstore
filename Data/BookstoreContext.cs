@@ -20,10 +20,7 @@ namespace Bookstore.Data
             .WithMany(i => i.Book)
             .HasForeignKey(b => b.Authorid).OnDelete(DeleteBehavior.NoAction);
             
-             modelBuilder.Entity<Author>()
-              .HasOne(b => b.Books)
-            .WithMany(i => i.Authors)
-            .HasForeignKey(b => b.BooksId).OnDelete(DeleteBehavior.NoAction);
+             modelBuilder.Entity<Author>();
 
             modelBuilder.Entity<Movie>()
               .HasOne(b => b.Book)

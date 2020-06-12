@@ -3,10 +3,29 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Bookstore.Migrations
 {
-    public partial class bookstore10 : Migration
+    public partial class Bookstore12 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Author",
+                columns: table => new
+                {
+                    AuthorID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Picture = table.Column<string>(nullable: true),
+                    FirstName = table.Column<string>(nullable: true),
+                    LastName = table.Column<string>(nullable: true),
+                    DateofBirth = table.Column<DateTime>(nullable: false),
+                    DateofDeath = table.Column<DateTime>(nullable: true),
+                    Biography = table.Column<string>(nullable: true),
+                    Rewards = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Author", x => x.AuthorID);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Book",
                 columns: table => new
@@ -27,31 +46,11 @@ namespace Bookstore.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Book", x => x.BooksID);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Author",
-                columns: table => new
-                {
-                    AuthorID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Picture = table.Column<string>(nullable: true),
-                    FirstName = table.Column<string>(nullable: true),
-                    LastName = table.Column<string>(nullable: true),
-                    DateofBirth = table.Column<DateTime>(nullable: false),
-                    DateofDeath = table.Column<DateTime>(nullable: true),
-                    Biography = table.Column<string>(nullable: true),
-                    BooksId = table.Column<int>(nullable: false),
-                    Rewards = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Author", x => x.AuthorID);
                     table.ForeignKey(
-                        name: "FK_Author_Book_BooksId",
-                        column: x => x.BooksId,
-                        principalTable: "Book",
-                        principalColumn: "BooksID");
+                        name: "FK_Book_Author_Authorid",
+                        column: x => x.Authorid,
+                        principalTable: "Author",
+                        principalColumn: "AuthorID");
                 });
 
             migrationBuilder.CreateTable(
@@ -79,11 +78,6 @@ namespace Bookstore.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Author_BooksId",
-                table: "Author",
-                column: "BooksId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Book_Authorid",
                 table: "Book",
                 column: "Authorid");
@@ -92,21 +86,10 @@ namespace Bookstore.Migrations
                 name: "IX_Movie_BookId",
                 table: "Movie",
                 column: "BookId");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Book_Author_Authorid",
-                table: "Book",
-                column: "Authorid",
-                principalTable: "Author",
-                principalColumn: "AuthorID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Author_Book_BooksId",
-                table: "Author");
-
             migrationBuilder.DropTable(
                 name: "Movie");
 

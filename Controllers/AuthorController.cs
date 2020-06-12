@@ -38,8 +38,6 @@ namespace Bookstore.Controllers
     }
 
     var author = await _context.Author
-        .Include(s => s.Books)
-        .AsNoTracking()
         .FirstOrDefaultAsync(m => m.AuthorID == id);
 
     if (author == null)
@@ -73,9 +71,7 @@ namespace Bookstore.Controllers
                     Biography = model.Biography,
                     Picture = uniqueFileName,
                     Rewards = model.Rewards,
-                    Books= model.Books,
-                    Book=model.Book,
-                    BooksId=model.BooksId
+                    Book=model.Book
                 };
 
                 _context.Add(author);
@@ -110,11 +106,8 @@ namespace Bookstore.Controllers
                     DateofDeath = author.DateofBirth,
                     Biography = author.Biography,
                     Rewards = author.Rewards,
-                    Books= author.Books,
-                    Book=author.Book,
-                    BooksId=author.BooksId
+                    Book=author.Book
                 };
-             ViewData["BooksId"] = new SelectList(_context.Book, "BooksId", "Title", author.BooksId);
             return View(vm);
         }
 
@@ -146,9 +139,7 @@ namespace Bookstore.Controllers
                     Biography = vm.Biography,
                     Picture = uniqueFileName,
                     Rewards = vm.Rewards,
-                    Books= vm.Books,
-                    Book=vm.Book,
-                    BooksId=vm.BooksId
+                    Book=vm.Book
                 };
 
                     _context.Update(author);
@@ -188,8 +179,6 @@ namespace Bookstore.Controllers
             }
 
             var author = await _context.Author
-                .Include(c => c.Books)
-                .AsNoTracking()
                 .FirstOrDefaultAsync(m => m.AuthorID == id);
             if (author == null)
             {

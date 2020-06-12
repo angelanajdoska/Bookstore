@@ -29,6 +29,6 @@ namespace Bookstore.Models
         [ForeignKey("Authorid")]
         public Author Author {get; set;}
         public ICollection<Movie> Movie { get; set; }
-        public ICollection<Author> Authors {get; set;}
+       
     }
 }
