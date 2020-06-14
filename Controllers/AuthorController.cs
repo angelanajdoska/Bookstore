@@ -36,8 +36,8 @@ namespace Bookstore.Controllers
     {
         return NotFound();
     }
-
-    var author = await _context.Author
+    
+      var author = await _context.Author
         .FirstOrDefaultAsync(m => m.AuthorID == id);
 
     if (author == null)
@@ -50,7 +50,6 @@ namespace Bookstore.Controllers
 
        public IActionResult Create()
         {
-        PopulateDropDownList();
         return View();
         }
          [HttpPost]
@@ -63,15 +62,15 @@ namespace Bookstore.Controllers
 
                 Author author = new Author
                 {
-                    AuthorID = model.AuthorID,
+                    Picture = uniqueFileName,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
                     DateofBirth = model.DateofBirth,
                     DateofDeath = model.DateofBirth,
-                    Biography = model.Biography,
-                    Picture = uniqueFileName,
+                    Biography = model.Biography,                    
                     Rewards = model.Rewards,
-                    Book=model.Book
+                    Book=model.Book,
+                    Books=model.Books
                 };
 
                 _context.Add(author);
@@ -221,6 +220,15 @@ namespace Bookstore.Controllers
             }
             return uniqueFileName;
         }
+         public async Task<IActionResult> MyBooks(int id)
+        {
+            IQueryable<Book> book = _context.Book;
 
+            book = book.Where(s=>s.Authorid==id);
+            
+            ViewData["AuthorsName"] = _context.Author.Where(t => t.AuthorID == id).Select(t => t.FullName).FirstOrDefault();
+            return View(book);
+        }
+             
     }
 }

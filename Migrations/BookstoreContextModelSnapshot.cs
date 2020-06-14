@@ -29,6 +29,9 @@ namespace Bookstore.Migrations
                     b.Property<string>("Biography")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Books")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("DateofBirth")
                         .HasColumnType("datetime2");
 

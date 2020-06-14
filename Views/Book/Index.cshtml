@@ -10,40 +10,40 @@
                     <ul class="navbar-nav flex-grow-1"style="background-color: black;">
                         <li class="nav-item">
                            <a class="nav-link text-dark" style="font-size:larger;font-weight:bold;" 
-                           asp-area="" asp-controller="Book" asp-action="Genre"><div style="color: white;">Трилер</div></a>
+                           asp-area="" asp-controller="Book" asp-action="Thriller"><div style="color: white;">Трилер</div></a>
                                 </li>
                                 &ensp;
                                 <li class="nav-item" >                                                             
                                  <a class="nav-link text-dark" style="font-size:larger;font-weight:bold;"  
-                                 asp-area="" asp-controller="Book" asp-action="Genre"><div style="color: white;">Мистерија</div></a>
+                                 asp-area="" asp-controller="Book" asp-action="Mystery"><div style="color: white;">Мистерија</div></a>
                                 </li>   &ensp;
                                 <li class="nav-item" >                                                             
                                  <a class="nav-link text-dark" style="font-size:larger;font-weight:bold;" 
-                                  asp-area="" asp-controller="Book" asp-action="Genre"><div style="color: white;">Комедија</div></a>
+                                  asp-area="" asp-controller="Book" asp-action="Comedy"><div style="color: white;">Комедија</div></a>
                                 </li>   &ensp;
                                 <li class="nav-item">
                                 <a class="nav-link text-dark"style="font-size:larger;font-weight:bold;" 
-                                asp-area="" asp-controller="Book" asp-action="Genre"><div style="color: white;">Фантазија</div></a>
+                                asp-area="" asp-controller="Book" asp-action="Fantasy"><div style="color: white;">Фантазија</div></a>
                                   </li>  &ensp;
                                   <li class="nav-item">
                                 <a class="nav-link text-dark" style="font-size:larger;font-weight:bold;" 
-                                 asp-area="" asp-controller="Book" asp-action="Genre"><div style="color: white;">Новела</div></a>
+                                 asp-area="" asp-controller="Book" asp-action="Novel"><div style="color: white;">Новела</div></a>
                                  </li>  &ensp;
                                  <li class="nav-item" >                                                             
                                  <a class="nav-link text-dark" style="font-size:larger;font-weight:bold;" 
-                                  asp-area="" asp-controller="Book" asp-action="Genre"><div style="color: white;">Биографија</div></a>
+                                  asp-area="" asp-controller="Book" asp-action="Biography"><div style="color: white;">Биографија</div></a>
                                 </li>   &ensp; 
                                 <li class="nav-item" >                                                             
                                  <a class="nav-link text-dark" style="font-size:larger;font-weight:bold;" 
-                                  asp-area="" asp-controller="Book" asp-action="Genre"><div style="color: white;">Класици</div></a>
+                                  asp-area="" asp-controller="Book" asp-action="Classics"><div style="color: white;">Класици</div></a>
                                 </li>  &ensp;
                                 <li class="nav-item" >                                                             
                                  <a class="nav-link text-dark" style="font-size:larger;font-weight:bold;" 
-                                 asp-area="" asp-controller="Book" asp-action="Genre"><div style="color: white;">Митологија</div></a>
+                                 asp-area="" asp-controller="Book" asp-action="Mythology"><div style="color: white;">Митологија</div></a>
                                 </li>  &ensp;                               
                                 <li class="nav-item" >                                                             
                                  <a class="nav-link text-dark" style="font-size:larger;font-weight:bold;" 
-                                 asp-area="" asp-controller="Book" asp-action="Genre"> <div style="color: white;">Поезија</div></a>
+                                 asp-area="" asp-controller="Book" asp-action="Poetry"> <div style="color: white;">Поезија</div></a>
                                 </li>                           
                         </ul>
                 </div>
@@ -59,26 +59,30 @@
         </p>
     </div>
 </form>
-<h2>Сите книги</h2>
+<h2><a style="text-align: center;" class="nav-link" asp-controller="Book" asp-action="Index">Сите книги</a> </h2>
 <p>
     <a asp-action="Create">Додади книга</a>
 </p>
-
-@foreach (var item in Model) {
+@for (int i = 0; i < Model.Count(); i+=3)
+{ 
     <div class="row">
-    <div id="dataListItem" class="col-md-4">
+@foreach (var item in Model.Skip(i).Take(3)) {    
+            <div class="col-md-4">
+      <div style="text-align: center;" >
         
                 <img src="~/pictures/@item.Picture"
-                     height="300" width="150"
+                     height="240" width="150"
                      asp-append-version="true"/>   
-            <div style="text-align: center;"> <a asp-action="Details" asp-route-id="@item.BooksID"> @Html.DisplayFor(modelItem => item.Title) </a>
+            <p> <a asp-action="Details" asp-route-id="@item.BooksID"> @Html.DisplayFor(modelItem => item.Title) </a><br/>
            
-               <div>@Html.DisplayFor(modelItem => item.Price) денари</div>
-          </div>
-           <div>
+               @Html.DisplayFor(modelItem => item.Price) денари</p>
+          
+           <p>
                 <a asp-action="Edit" asp-route-id="@item.BooksID">Измени</a> |
                 <a asp-action="Delete" asp-route-id="@item.BooksID">Избриши</a>    
-          </div>   
+          </p>   
+        </div>
       </div>
-</div>          
+   }     
+    </div>           
 }

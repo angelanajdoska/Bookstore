@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\Angela\\Desktop\\Ангела\\трета година\\шести семестар\\Развој на серверски web апликации\\проекти\\Bookstore\\Bookstore.csproj",
+  "FilePath": "c:\\Bookstore\\Bookstore.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -20521,118 +20521,163 @@
   "RootNamespace": "Bookstore",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\Angela\\Desktop\\Ангела\\трета година\\шести семестар\\Развој на серверски web апликации\\проекти\\Bookstore\\Views\\Book\\Details.cshtml",
-      "TargetPath": "Views\\Book\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Angela\\Desktop\\Ангела\\трета година\\шести семестар\\Развој на серверски web апликации\\проекти\\Bookstore\\Views\\Book\\Create.cshtml",
-      "TargetPath": "Views\\Book\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Angela\\Desktop\\Ангела\\трета година\\шести семестар\\Развој на серверски web апликации\\проекти\\Bookstore\\Views\\Author\\Details.cshtml",
-      "TargetPath": "Views\\Author\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Angela\\Desktop\\Ангела\\трета година\\шести семестар\\Развој на серверски web апликации\\проекти\\Bookstore\\Views\\_ViewImports.cshtml",
-      "TargetPath": "Views\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Angela\\Desktop\\Ангела\\трета година\\шести семестар\\Развој на серверски web апликации\\проекти\\Bookstore\\Views\\Book\\Delete.cshtml",
-      "TargetPath": "Views\\Book\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Angela\\Desktop\\Ангела\\трета година\\шести семестар\\Развој на серверски web апликации\\проекти\\Bookstore\\Views\\Author\\Edit.cshtml",
-      "TargetPath": "Views\\Author\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Angela\\Desktop\\Ангела\\трета година\\шести семестар\\Развој на серверски web апликации\\проекти\\Bookstore\\Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Angela\\Desktop\\Ангела\\трета година\\шести семестар\\Развој на серверски web апликации\\проекти\\Bookstore\\Views\\Book\\Genre.cshtml",
-      "TargetPath": "Views\\Book\\Genre.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Angela\\Desktop\\Ангела\\трета година\\шести семестар\\Развој на серверски web апликации\\проекти\\Bookstore\\Views\\Movie\\Index.cshtml",
-      "TargetPath": "Views\\Movie\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Angela\\Desktop\\Ангела\\трета година\\шести семестар\\Развој на серверски web апликации\\проекти\\Bookstore\\Views\\Author\\Delete.cshtml",
-      "TargetPath": "Views\\Author\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Angela\\Desktop\\Ангела\\трета година\\шести семестар\\Развој на серверски web апликации\\проекти\\Bookstore\\Views\\Movie\\Delete.cshtml",
-      "TargetPath": "Views\\Movie\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Angela\\Desktop\\Ангела\\трета година\\шести семестар\\Развој на серверски web апликации\\проекти\\Bookstore\\Views\\Movie\\Details.cshtml",
-      "TargetPath": "Views\\Movie\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Angela\\Desktop\\Ангела\\трета година\\шести семестар\\Развој на серверски web апликации\\проекти\\Bookstore\\Views\\Shared\\Error.cshtml",
-      "TargetPath": "Views\\Shared\\Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Angela\\Desktop\\Ангела\\трета година\\шести семестар\\Развој на серверски web апликации\\проекти\\Bookstore\\Views\\Book\\Edit.cshtml",
+      "FilePath": "c:\\Bookstore\\Views\\Book\\Edit.cshtml",
       "TargetPath": "Views\\Book\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Angela\\Desktop\\Ангела\\трета година\\шести семестар\\Развој на серверски web апликации\\проекти\\Bookstore\\Views\\_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FilePath": "c:\\Bookstore\\Views\\Book\\Novel.cshtml",
+      "TargetPath": "Views\\Book\\Novel.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Angela\\Desktop\\Ангела\\трета година\\шести семестар\\Развој на серверски web апликации\\проекти\\Bookstore\\Views\\Shared\\_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FilePath": "c:\\Bookstore\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Angela\\Desktop\\Ангела\\трета година\\шести семестар\\Развој на серверски web апликации\\проекти\\Bookstore\\Views\\Movie\\Edit.cshtml",
-      "TargetPath": "Views\\Movie\\Edit.cshtml",
+      "FilePath": "c:\\Bookstore\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Angela\\Desktop\\Ангела\\трета година\\шести семестар\\Развој на серверски web апликации\\проекти\\Bookstore\\Views\\Movie\\Create.cshtml",
-      "TargetPath": "Views\\Movie\\Create.cshtml",
+      "FilePath": "c:\\Bookstore\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Angela\\Desktop\\Ангела\\трета година\\шести семестар\\Развој на серверски web апликации\\проекти\\Bookstore\\Views\\Author\\Create.cshtml",
+      "FilePath": "c:\\Bookstore\\Views\\Book\\Comedy.cshtml",
+      "TargetPath": "Views\\Book\\Comedy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Author\\Create.cshtml",
       "TargetPath": "Views\\Author\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Angela\\Desktop\\Ангела\\трета година\\шести семестар\\Развој на серверски web апликации\\проекти\\Bookstore\\Views\\Home\\Privacy.cshtml",
+      "FilePath": "c:\\Bookstore\\Views\\Book\\Details.cshtml",
+      "TargetPath": "Views\\Book\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Book\\Classics.cshtml",
+      "TargetPath": "Views\\Book\\Classics.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Book\\Mythology.cshtml",
+      "TargetPath": "Views\\Book\\Mythology.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Author\\Details.cshtml",
+      "TargetPath": "Views\\Author\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Movie\\Index.cshtml",
+      "TargetPath": "Views\\Movie\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Book\\Biography.cshtml",
+      "TargetPath": "Views\\Book\\Biography.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Book\\Thriller.cshtml",
+      "TargetPath": "Views\\Book\\Thriller.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Book\\Delete.cshtml",
+      "TargetPath": "Views\\Book\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Movie\\Create.cshtml",
+      "TargetPath": "Views\\Movie\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Book\\Mystery.cshtml",
+      "TargetPath": "Views\\Book\\Mystery.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Movie\\Edit.cshtml",
+      "TargetPath": "Views\\Movie\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Movie\\Delete.cshtml",
+      "TargetPath": "Views\\Movie\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Author\\MyBooks.cshtml",
+      "TargetPath": "Views\\Author\\MyBooks.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Author\\Delete.cshtml",
+      "TargetPath": "Views\\Author\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Shared\\Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Book\\Fantasy.cshtml",
+      "TargetPath": "Views\\Book\\Fantasy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Angela\\Desktop\\Ангела\\трета година\\шести семестар\\Развој на серверски web апликации\\проекти\\Bookstore\\Views\\Author\\Index.cshtml",
-      "TargetPath": "Views\\Author\\Index.cshtml",
+      "FilePath": "c:\\Bookstore\\Views\\Author\\Edit.cshtml",
+      "TargetPath": "Views\\Author\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Angela\\Desktop\\Ангела\\трета година\\шести семестар\\Развој на серверски web апликации\\проекти\\Bookstore\\Views\\Book\\Index.cshtml",
+      "FilePath": "c:\\Bookstore\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Movie\\Details.cshtml",
+      "TargetPath": "Views\\Movie\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Book\\Poetry.cshtml",
+      "TargetPath": "Views\\Book\\Poetry.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Book\\Index.cshtml",
       "TargetPath": "Views\\Book\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Angela\\Desktop\\Ангела\\трета година\\шести семестар\\Развој на серверски web апликации\\проекти\\Bookstore\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FilePath": "c:\\Bookstore\\Views\\Author\\Index.cshtml",
+      "TargetPath": "Views\\Author\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Book\\Create.cshtml",
+      "TargetPath": "Views\\Book\\Create.cshtml",
       "FileKind": "mvc"
     }
   ],

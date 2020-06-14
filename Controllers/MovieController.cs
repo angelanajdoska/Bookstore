@@ -56,30 +56,15 @@ namespace Bookstore.Controllers
         }
          [HttpPost]
         [ValidateAntiForgeryToken]
-       public async Task<IActionResult> Create(MovieViewModel model)
+       public async Task<IActionResult> Create([Bind("TItle, Synopsis, BookId, Picture, ReleaseDate, Trailer, Rating, Book")]Movie movie)
         {
             if (ModelState.IsValid)
             {
-                string uniqueFileName = UploadedFile(model);
-
-                Movie movie = new Movie
-                {
-                    MovieID = model.MovieID,
-                    Title = model.Title,
-                    Synopsis = model.Synopsis,
-                    BookId=model.BookId,
-                    Picture = uniqueFileName,
-                    ReleaseDate=model.ReleaseDate,
-                    Trailer = model.Trailer,
-                    Rating= model.Rating,
-                    Book=model.Book
-                };
-
                 _context.Add(movie);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            PopulateDropDownList();
+            PopulateDropDownList(movie.BookId);
             return View();
         }
 
@@ -168,7 +153,7 @@ namespace Bookstore.Controllers
             var bookQuery = from d in _context.Book
                                    orderby d.Title
                                    select d;
-            ViewBag.Book = new SelectList(bookQuery.AsNoTracking(), "BookId", "Title", selectedbook);
+            ViewBag.BookId = new SelectList(bookQuery.AsNoTracking(), "BooksID", "Title", selectedbook);
         }
         
         

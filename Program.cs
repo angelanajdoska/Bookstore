@@ -25,7 +25,7 @@ namespace Bookstore
         try
         {
             var context = services.GetRequiredService<BookstoreContext>();
-            SeedData.Initialize(services);
+            SeedData.Initialize(context);
         }
         catch (Exception ex)
         {

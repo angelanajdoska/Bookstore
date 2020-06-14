@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YW79wo+JexnDFKOxecuwEx062s5dEcXooBKGl2YOjt9TJK3aIIJ/sMbkBhm6IXOWfKUeToCpEnFeZ7woq0qpjw==",
+  "dgSpecHash": "kmgTV8xSUFXVTn6tIG2qHbOfQiyh97kFrzfpy/CBED3i6PnFdMWGdDJtcJJGXvR7j0MV8TcZaeZGfGNCAjcesQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Angela\\Desktop\\Ангела\\трета година\\шести семестар\\Развој на серверски web апликации\\проекти\\Bookstore\\Bookstore.csproj",
+  "projectFilePath": "C:\\Bookstore\\Bookstore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Angela\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Angela\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

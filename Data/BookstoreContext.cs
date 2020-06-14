@@ -15,14 +15,15 @@ namespace Bookstore.Data
 
          protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Book>()
+            modelBuilder.Entity<Book>().ToTable("Book")
               .HasOne(b => b.Author)
             .WithMany(i => i.Book)
             .HasForeignKey(b => b.Authorid).OnDelete(DeleteBehavior.NoAction);
             
-             modelBuilder.Entity<Author>();
+             modelBuilder.Entity<Author>().ToTable("Author");
+             
 
-            modelBuilder.Entity<Movie>()
+            modelBuilder.Entity<Movie>().ToTable("Movie")
               .HasOne(b => b.Book)
             .WithMany(i => i.Movie)
             .HasForeignKey(b => b.BookId).OnDelete(DeleteBehavior.NoAction);

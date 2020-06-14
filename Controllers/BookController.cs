@@ -39,7 +39,39 @@ namespace Bookstore.Controllers
           
          return View(await books.AsNoTracking().ToListAsync());
         }
-        public async Task<IActionResult> Genre()
+        public async Task<IActionResult> Thriller()
+        {         
+          return View(await _context.Book.ToListAsync());
+        }
+          public async Task<IActionResult> Biography()
+        {         
+          return View(await _context.Book.ToListAsync());
+        }
+           public async Task<IActionResult> Classics()
+        {         
+          return View(await _context.Book.ToListAsync());
+        }
+           public async Task<IActionResult> Comedy()
+        {         
+          return View(await _context.Book.ToListAsync());
+        }
+           public async Task<IActionResult> Fantasy()
+        {         
+          return View(await _context.Book.ToListAsync());
+        }
+        public async Task<IActionResult> Mystery()
+        {         
+          return View(await _context.Book.ToListAsync());
+        }
+        public async Task<IActionResult> Mythology()
+        {         
+          return View(await _context.Book.ToListAsync());
+        }
+        public async Task<IActionResult> Novel()
+        {         
+          return View(await _context.Book.ToListAsync());
+        }
+        public async Task<IActionResult> Poetry()
         {         
           return View(await _context.Book.ToListAsync());
         }
@@ -66,39 +98,22 @@ namespace Bookstore.Controllers
 // GET: Book/Create
  public IActionResult Create()
         {
+            PopulateDropDownList();
             return View();
         }
          [HttpPost]
         [ValidateAntiForgeryToken]
-         public async Task<IActionResult> Create(BookViewModel model)
+         public async Task<IActionResult> Create([Bind("Title, OriginalTitle, Genre, Synopsis, NumberofPages, Picture, Price, ReleaseDate, Publisher, Movie, Author, Authorid")]Book book)
         {
             if (ModelState.IsValid)
             {
-                string uniqueFileName = UploadedFile(model);
-
-                Book book = new Book
-                {
-                    BooksID = model.BooksID,
-                    Title = model.Title,
-                    OriginalTitle = model.OriginalTitle,
-                    Genre = model.Genre,
-                    Synopsis = model.Synopsis,
-                    NumberofPages = model.NumberofPages,
-                    Picture = uniqueFileName,
-                    Price=model.Price,
-                    ReleaseDate=model.ReleaseDate,
-                    Publisher = model.Publisher,
-                    Movie= model.Movie,
-                    Author=model.Author,
-                    Authorid=model.Authorid
-                };
-
+               
                 _context.Add(book);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }             
-            PopulateDropDownList();
-            return View();
+            } 
+          PopulateDropDownList(book.Authorid);          
+           return View();
         }
 
 
@@ -195,9 +210,9 @@ namespace Bookstore.Controllers
         private void PopulateDropDownList(object selectedauthor = null)
         {
             var authorQuery = from d in _context.Author
-                                   orderby d.FullName
+                                   orderby d.FirstName
                                    select d;
-            ViewBag.Author = new SelectList(authorQuery.AsNoTracking(), "Authorid", "FullName", selectedauthor);
+            ViewBag.Authorid = new SelectList(authorQuery.AsNoTracking(), "AuthorID", "FullName", selectedauthor);
         }
         
         

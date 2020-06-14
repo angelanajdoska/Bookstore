@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Bookstore.Migrations
 {
-    public partial class Bookstore12 : Migration
+    public partial class Andromeda33 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -19,7 +19,8 @@ namespace Bookstore.Migrations
                     DateofBirth = table.Column<DateTime>(nullable: false),
                     DateofDeath = table.Column<DateTime>(nullable: true),
                     Biography = table.Column<string>(nullable: true),
-                    Rewards = table.Column<string>(nullable: true)
+                    Rewards = table.Column<string>(nullable: true),
+                    Books = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

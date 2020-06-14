@@ -1,4 +1,4 @@
-@model Bookstore.Models.Movie
+@model Bookstore.ViewModels.MovieViewModel
 
 @{
     ViewData["Title"] = "Измени";
@@ -10,9 +10,8 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="MovieID" />
+        <form asp-action="Edit" enctype="multipart/form-data" method="post">
+            
           <div class="form-group">
                 <label asp-for="Picture" class="control-label"></label>
                 <div class="custom-file">
@@ -46,12 +45,8 @@
                 <input asp-for="ReleaseDate" class="form-control" />
                      <span asp-validation-for="ReleaseDate" class="text-danger"></span>
             </div>
-              <div class="form-group">
-                <label asp-for="BookId" class="control-label"></label>
-                <input asp-for="BookId" class="form-control" />
-                     <span asp-validation-for="BookId" class="text-danger"></span>
-            </div>
-           
+            
+                       
             <div class="form-group">
                 <input type="submit" value="Измени" class="btn btn-primary" />
             </div>

@@ -21,7 +21,6 @@ namespace Bookstore.ViewModels
         [Display(Name = "Date of Death")]
         public DateTime? DateofDeath { get; set; }
         public string Biography { get; set; }
-        public int BooksId { get; set; }
         public string Rewards { get; set; }
         
         [Display(Name = "Full Name")]
@@ -29,8 +28,8 @@ namespace Bookstore.ViewModels
         {
             get { return FirstName + " " + LastName; }
         }
-        public Book Books { get; set; }
         public ICollection<Book> Book {get; set;}        
         public IFormFile Picture { get; set; }
+        public string Books {get; set;}
     }
 }

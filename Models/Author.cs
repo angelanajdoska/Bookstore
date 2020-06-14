@@ -18,18 +18,21 @@ namespace Bookstore.Models
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
         [Display(Name = "Date of Birth")]
+        [DataType(DataType.Date)]
         public DateTime DateofBirth { get; set; }
         [Display(Name = "Date of Death")]
+        [DataType(DataType.Date)]
         public DateTime? DateofDeath { get; set; }
         public string Biography { get; set; }
         public string Rewards { get; set; }
+        public string Books {get; set;}
         
         [Display(Name = "Full Name")]
         public string FullName
         {
             get { return FirstName + " " + LastName; }
         }
-     
-        public ICollection<Book> Book {get; set;}
+       
+       public ICollection<Book> Book {get; set;}
     }
 }

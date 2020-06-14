@@ -24,11 +24,13 @@ namespace Bookstore.Models
         public int NumberofPages { get; set; }
         public int Price { get; set; }
         [Display(Name = "Release Date")]
+        [DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
         public string Publisher { get; set; }
         [ForeignKey("Authorid")]
         public Author Author {get; set;}
         public ICollection<Movie> Movie { get; set; }
+        
        
     }
 }

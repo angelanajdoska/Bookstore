@@ -2,22 +2,25 @@
 
 @{
     ViewData["Title"] = "Детали";
+     var photoPath = "~/pictures/" + (Model.Picture);
 }
 
-<h1>Детали</h1>
+
 <div style="text-align: left;">
  <span style="float:right;">
-<div class="display-field">  
-<img src="@Url.Content(@Model.Picture)" alt="Слика" />  
-</div> 
+ <img src="@photoPath"
+         height="300" width="180"
+         asp-append-version="true" />
  <p>@Html.DisplayFor(model => model.Rating)</p>
  </span>
-<p style="text-align: center;"> @Html.DisplayFor(model => model.Title)</p>
-<p>Снимен според:@Html.DisplayFor(model => model.Book.Title) </p>
-<p> Дата на излегување: @Html.DisplayFor(model => model.ReleaseDate)</p>
+<p style="text-align: center; font-size: larger; font-weight:bold;"> @Html.DisplayFor(model => model.Title)</p>
+<p><strong>Снимен според: </strong> <a asp-controller="Book" asp-action="Details" asp-route-id="@Model.BookId">
+@Html.DisplayFor(model => model.Book.Title)</a> </p>
+<p> <strong>Дата на излегување: </strong>@Html.DisplayFor(model => model.ReleaseDate)</p>
  <p> @Html.DisplayFor(model => model.Synopsis)</p>
- <p>Trailer @Html.DisplayFor(model => model.Trailer) </p>
+  <iframe src="@Model.Trailer" width="560" height="315" frameborder="0" allowfullscreen></iframe> </p>
 </div>
+
  
     <a asp-action="Edit" asp-route-id="@Model.MovieID">Измени</a> |
     <a asp-action="Index">Назад</a>

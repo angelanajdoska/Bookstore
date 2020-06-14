@@ -16,6 +16,7 @@ namespace Bookstore.Models
         public string Title { get; set; }
         public int BookId { get; set; }
         [Display(Name = "Release Date")]
+        [DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
         public string Synopsis { get; set; }
         public string Trailer { get; set; }

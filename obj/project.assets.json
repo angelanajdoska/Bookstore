@@ -5008,11 +5008,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Angela\\Desktop\\Ангела\\трета година\\шести семестар\\Развој на серверски web апликации\\проекти\\Bookstore\\Bookstore.csproj",
+      "projectUniqueName": "c:\\Bookstore\\Bookstore.csproj",
       "projectName": "Bookstore",
-      "projectPath": "C:\\Users\\Angela\\Desktop\\Ангела\\трета година\\шести семестар\\Развој на серверски web апликации\\проекти\\Bookstore\\Bookstore.csproj",
+      "projectPath": "c:\\Bookstore\\Bookstore.csproj",
       "packagesPath": "C:\\Users\\Angela\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Angela\\Desktop\\Ангела\\трета година\\шести семестар\\Развој на серверски web апликации\\проекти\\Bookstore\\obj\\",
+      "outputPath": "c:\\Bookstore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Angela\\AppData\\Roaming\\NuGet\\NuGet.Config"
