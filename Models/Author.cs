@@ -9,25 +9,29 @@ namespace Bookstore.Models
     public class Author
     {
 
+        [Display(Name = "Слика")]
         public string Picture { get; set; }
         [Required]
         [Key]
         public int AuthorID { get; set; }
-        [Display(Name = "First Name")]
+        [Display(Name = "Име")]
         public string FirstName { get; set; }
-        [Display(Name = "Last Name")]
+        [Display(Name = "Презиме")]
         public string LastName { get; set; }
-        [Display(Name = "Date of Birth")]
+        [Display(Name = "Дата на раѓање")]
         [DataType(DataType.Date)]
         public DateTime DateofBirth { get; set; }
-        [Display(Name = "Date of Death")]
+        [Display(Name = "Дата на умирање")]
         [DataType(DataType.Date)]
         public DateTime? DateofDeath { get; set; }
+        [Display(Name = "Биографија")]
         public string Biography { get; set; }
+        [Display(Name = "Награди")]
         public string Rewards { get; set; }
+        [Display(Name = "Книга")]
         public string Books {get; set;}
         
-        [Display(Name = "Full Name")]
+        [Display(Name = "Име и презиме")]
         public string FullName
         {
             get { return FirstName + " " + LastName; }

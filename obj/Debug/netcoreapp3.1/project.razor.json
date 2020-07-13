@@ -20521,6 +20521,26 @@
   "RootNamespace": "Bookstore",
   "Documents": [
     {
+      "FilePath": "c:\\Bookstore\\Views\\Movieuser.cshtml\\Details.cshtml",
+      "TargetPath": "Views\\Movieuser.cshtml\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Bookuser.cshtml\\Poetry.cshtml",
+      "TargetPath": "Views\\Bookuser.cshtml\\Poetry.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Authoruser.cshtml\\Index.cshtml",
+      "TargetPath": "Views\\Authoruser.cshtml\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Admin\\Orders.cshtml",
+      "TargetPath": "Views\\Admin\\Orders.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Bookstore\\Views\\Book\\Edit.cshtml",
       "TargetPath": "Views\\Book\\Edit.cshtml",
       "FileKind": "mvc"
@@ -20531,6 +20551,21 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Bookstore\\Views\\Bookuser.cshtml\\Thriller.cshtml",
+      "TargetPath": "Views\\Bookuser.cshtml\\Thriller.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Bookuser.cshtml\\Fantasy.cshtml",
+      "TargetPath": "Views\\Bookuser.cshtml\\Fantasy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Bookuser.cshtml\\Novel.cshtml",
+      "TargetPath": "Views\\Bookuser.cshtml\\Novel.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Bookstore\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -20538,6 +20573,16 @@
     {
       "FilePath": "c:\\Bookstore\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Bookuser.cshtml\\Details.cshtml",
+      "TargetPath": "Views\\Bookuser.cshtml\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Movieuser.cshtml\\Index.cshtml",
+      "TargetPath": "Views\\Movieuser.cshtml\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20561,6 +20606,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Bookstore\\Views\\Bookuser.cshtml\\Biography.cshtml",
+      "TargetPath": "Views\\Bookuser.cshtml\\Biography.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Bookstore\\Views\\Book\\Classics.cshtml",
       "TargetPath": "Views\\Book\\Classics.cshtml",
       "FileKind": "mvc"
@@ -20571,8 +20621,28 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Bookstore\\Views\\Bookuser.cshtml\\Comedy.cshtml",
+      "TargetPath": "Views\\Bookuser.cshtml\\Comedy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\User\\Create.cshtml",
+      "TargetPath": "Views\\User\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Bookstore\\Views\\Author\\Details.cshtml",
       "TargetPath": "Views\\Author\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Bookuser.cshtml\\Mythology.cshtml",
+      "TargetPath": "Views\\Bookuser.cshtml\\Mythology.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Bookuser.cshtml\\Mystery.cshtml",
+      "TargetPath": "Views\\Bookuser.cshtml\\Mystery.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20588,6 +20658,16 @@
     {
       "FilePath": "c:\\Bookstore\\Views\\Book\\Thriller.cshtml",
       "TargetPath": "Views\\Book\\Thriller.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Admin\\Index.cshtml",
+      "TargetPath": "Views\\Admin\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Admin\\Login.cshtml",
+      "TargetPath": "Views\\Admin\\Login.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20621,6 +20701,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Bookstore\\Views\\User\\Login.cshtml",
+      "TargetPath": "Views\\User\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Bookstore\\Views\\Author\\Delete.cshtml",
       "TargetPath": "Views\\Author\\Delete.cshtml",
       "FileKind": "mvc"
@@ -20628,6 +20713,11 @@
     {
       "FilePath": "c:\\Bookstore\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Bookuser.cshtml\\Classics.cshtml",
+      "TargetPath": "Views\\Bookuser.cshtml\\Classics.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20641,6 +20731,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Bookstore\\Views\\Authoruser.cshtml\\Details.cshtml",
+      "TargetPath": "Views\\Authoruser.cshtml\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Bookstore\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
@@ -20648,6 +20743,11 @@
     {
       "FilePath": "c:\\Bookstore\\Views\\Author\\Edit.cshtml",
       "TargetPath": "Views\\Author\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Authoruser.cshtml\\MyBooks.cshtml",
+      "TargetPath": "Views\\Authoruser.cshtml\\MyBooks.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20678,6 +20778,16 @@
     {
       "FilePath": "c:\\Bookstore\\Views\\Book\\Create.cshtml",
       "TargetPath": "Views\\Book\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\Bookuser.cshtml\\Index.cshtml",
+      "TargetPath": "Views\\Bookuser.cshtml\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Bookstore\\Views\\User\\Text.cshtml",
+      "TargetPath": "Views\\User\\Text.cshtml",
       "FileKind": "mvc"
     }
   ],

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -95,15 +95,17 @@ namespace Bookstore.Controllers
 
     return View(book);
 }
-// GET: Book/Create
- public IActionResult Create()
+        // GET: Book/Create
+        [Authorize(Roles = "Admin")]
+        public IActionResult Create()
         {
             PopulateDropDownList();
             return View();
         }
          [HttpPost]
         [ValidateAntiForgeryToken]
-         public async Task<IActionResult> Create([Bind("Title, OriginalTitle, Genre, Synopsis, NumberofPages, Picture, Price, ReleaseDate, Publisher, Movie, Author, Authorid")]Book book)
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Create([Bind("Title, OriginalTitle, Genre, Synopsis, NumberofPages, Picture, Price, ReleaseDate, Publisher, Movie, Author, Authorid")]Book book)
         {
             if (ModelState.IsValid)
             {
@@ -118,6 +120,7 @@ namespace Bookstore.Controllers
 
 
         // GET: Book/Edit/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -156,7 +159,8 @@ namespace Bookstore.Controllers
       
         [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
-       public async Task<IActionResult> EditPost(int? id, BookViewModel vm)
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> EditPost(int? id, BookViewModel vm)
         {
             if (id != vm.BooksID)
             {
@@ -214,9 +218,10 @@ namespace Bookstore.Controllers
                                    select d;
             ViewBag.Authorid = new SelectList(authorQuery.AsNoTracking(), "AuthorID", "FullName", selectedauthor);
         }
-        
-        
+
+
         // GET: Book/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -239,6 +244,7 @@ namespace Bookstore.Controllers
         // POST: Book/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var book = await _context.Book.FindAsync(id);
@@ -268,6 +274,36 @@ namespace Bookstore.Controllers
             }
             return uniqueFileName;
         }
+        public IActionResult Text()
+        {
+            return Content("Вашата нарачка е успешно процесирана");
+        }
+        public IActionResult Order(int id)
+        {
+            ViewData["BookName"] = _context.Book.Where(t => t.BooksID == id).Select(t => t.Title).FirstOrDefault();
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Order([Bind("Name, Email, PhoneNumber, Address, City, BookId, Book, Comment")] User order)
+        {
+           if (ModelState.IsValid)
+            {
+
+                _context.Add(order);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Text));
+            }
+            
+            return View();
+        }
+       
+            public IActionResult OrderedBooks()
+            {
+                IQueryable<User> user = _context.User;
+                return View(user);
+            }
+        
 
     }
 }

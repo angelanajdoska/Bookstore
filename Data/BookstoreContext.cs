@@ -1,9 +1,15 @@
 using Bookstore.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Bookstore.Data
 {
-    public class BookstoreContext : DbContext
+    public class BookstoreContext : IdentityDbContext<AppUser>
     {
         public BookstoreContext(DbContextOptions<BookstoreContext> options) : base(options)
         {
@@ -12,6 +18,8 @@ namespace Bookstore.Data
         public DbSet<Book> Book { get; set; }
         public DbSet<Movie> Movie{ get; set; }
         public DbSet<Author> Author { get; set; }
+        public DbSet<AppUser> AppUser{ get; set; }
+        public DbSet<User> User{ get; set; }
 
          protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -26,6 +34,11 @@ namespace Bookstore.Data
             modelBuilder.Entity<Movie>().ToTable("Movie")
               .HasOne(b => b.Book)
             .WithMany(i => i.Movie)
+            .HasForeignKey(b => b.BookId).OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<User>().ToTable("User")
+              .HasOne(b => b.Book)
+            .WithMany(i => i.Users)
             .HasForeignKey(b => b.BookId).OnDelete(DeleteBehavior.NoAction);
 
             base.OnModelCreating(modelBuilder);

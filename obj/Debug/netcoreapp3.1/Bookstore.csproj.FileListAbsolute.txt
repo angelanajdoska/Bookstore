@@ -179,3 +179,14 @@ C:\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Book\Novel.cshtml.g.cs
 C:\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Book\Poetry.cshtml.g.cs
 C:\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Book\Thriller.cshtml.g.cs
 C:\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Author\MyBooks.cshtml.g.cs
+C:\Bookstore\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Bookstore\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Bookstore\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Bookstore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Bookstore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Index.cshtml.g.cs
+C:\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Book\Order.cshtml.g.cs
+C:\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Book\OrderedBooks.cshtml.g.cs
+C:\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Create.cshtml.g.cs
+C:\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Account\AccessDenied.cshtml.g.cs
+C:\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs

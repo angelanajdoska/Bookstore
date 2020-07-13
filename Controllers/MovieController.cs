@@ -26,9 +26,17 @@ namespace Bookstore.Controllers
             _context = context;
             _webHostEnvironment = webHostEnvironment;
         }
-        public async Task<IActionResult> Index()
-        {         
-          return View(await _context.Movie.ToListAsync());
+        public async Task<IActionResult> Index(string search)
+        {
+            ViewData["Filter1"] = search;
+
+            var movies = from m in _context.Movie
+                        select m;
+            if (!String.IsNullOrEmpty(search))
+            {
+                movies = movies.Where(s => s.Title.Contains(search));
+            }
+            return View(await _context.Movie.ToListAsync());
         }
         public async Task<IActionResult> Details(int? id)
 {
@@ -49,6 +57,7 @@ namespace Bookstore.Controllers
 
     return View(movie);
 }
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             PopulateDropDownList();
@@ -56,7 +65,8 @@ namespace Bookstore.Controllers
         }
          [HttpPost]
         [ValidateAntiForgeryToken]
-       public async Task<IActionResult> Create([Bind("TItle, Synopsis, BookId, Picture, ReleaseDate, Trailer, Rating, Book")]Movie movie)
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Create([Bind("TItle, Synopsis, BookId, Picture, ReleaseDate, Trailer, Rating, Book")]Movie movie)
         {
             if (ModelState.IsValid)
             {
@@ -70,6 +80,7 @@ namespace Bookstore.Controllers
 
 
         // GET: Movie/Edit/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -100,7 +111,8 @@ namespace Bookstore.Controllers
         }
 
         // POST: Movie/Edit/5
-      
+        [Authorize(Roles = "Admin")]
+
         [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditPost(int? id, MovieViewModel vm)
@@ -155,9 +167,10 @@ namespace Bookstore.Controllers
                                    select d;
             ViewBag.BookId = new SelectList(bookQuery.AsNoTracking(), "BooksID", "Title", selectedbook);
         }
-        
-        
+
+
         // GET: Movie/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -180,6 +193,7 @@ namespace Bookstore.Controllers
         // POST: Movie/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var movie = await _context.Movie.FindAsync(id);

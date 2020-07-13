@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Bookstore\\Bookstore.csproj": {}
+    "c:\\Bookstore\\Bookstore.csproj": {}
   },
   "projects": {
-    "C:\\Bookstore\\Bookstore.csproj": {
+    "c:\\Bookstore\\Bookstore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Bookstore\\Bookstore.csproj",
+        "projectUniqueName": "c:\\Bookstore\\Bookstore.csproj",
         "projectName": "Bookstore",
-        "projectPath": "C:\\Bookstore\\Bookstore.csproj",
+        "projectPath": "c:\\Bookstore\\Bookstore.csproj",
         "packagesPath": "C:\\Users\\Angela\\.nuget\\packages\\",
-        "outputPath": "C:\\Bookstore\\obj\\",
+        "outputPath": "c:\\Bookstore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Angela\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Angela\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -36,6 +38,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.5, )"
@@ -79,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

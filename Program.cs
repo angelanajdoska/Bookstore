@@ -25,8 +25,9 @@ namespace Bookstore
         try
         {
             var context = services.GetRequiredService<BookstoreContext>();
-            SeedData.Initialize(context);
-        }
+                    context.Database.Migrate();
+                    SeedData.Initialize(services);
+                }
         catch (Exception ex)
         {
             var logger = services.GetRequiredService<ILogger<Program>>();

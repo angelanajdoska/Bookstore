@@ -26,9 +26,18 @@ namespace Bookstore.Controllers
             _context = context;
             _webHostEnvironment = webHostEnvironment;
         }
-        public async Task<IActionResult> Index()
-        {         
-          return View(await _context.Author.ToListAsync());
+        public async Task<IActionResult> Index(string String)
+        {
+            ViewData["Filter"] = String;
+
+            var authors = from a in _context.Author
+                          select a;
+            if (!String.IsNullOrEmpty(String))
+            {
+                authors = authors.Where(s => s.FirstName.Contains(String)
+                                          || s.LastName.Contains(String));
+            }
+            return View(await _context.Author.ToListAsync());
         }
         public async Task<IActionResult> Details(int? id)
 {
@@ -47,14 +56,15 @@ namespace Bookstore.Controllers
 
     return View(author);
 }
-
-       public IActionResult Create()
+        [Authorize(Roles = "Admin")]
+        public IActionResult Create()
         {
         return View();
         }
          [HttpPost]
         [ValidateAntiForgeryToken]
-         public async Task<IActionResult> Create(AuthorViewModel model)
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Create(AuthorViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -82,6 +92,7 @@ namespace Bookstore.Controllers
 
 
         // GET: Author/Edit/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -111,7 +122,8 @@ namespace Bookstore.Controllers
         }
 
         // POST: Author/Edit/5
-      
+        [Authorize(Roles = "Admin")]
+
         [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
         
@@ -167,9 +179,10 @@ namespace Bookstore.Controllers
                                    select d;
             ViewBag.Books = new SelectList(booksQuery.AsNoTracking(), "BooksId", "Title", selectedBook);
         }
-        
-        
+
+
         // GET: Author/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -190,6 +203,7 @@ namespace Bookstore.Controllers
         // POST: Author/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var author = await _context.Author.FindAsync(id);

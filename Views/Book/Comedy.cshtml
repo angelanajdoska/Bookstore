@@ -54,19 +54,24 @@
 {
             @if(item.Genre=="Комедија")
             { 
-                <div style="text-align: center;">
-                <img src="~/pictures/@item.Picture"
-                     height="240" width="150"
-                     asp-append-version="true"/>                
-            
-               <p> <a asp-action="Details" asp-route-id="@item.BooksID"> @Html.DisplayFor(modelItem => item.Title) </a></p> 
-          
-               <p> @Html.DisplayFor(modelItem => item.Price) денари</p>
-         
-               <p> <a asp-action="Edit" asp-route-id="@item.BooksID">Измени</a> |
-                <a asp-action="Delete" asp-route-id="@item.BooksID">Избриши</a></p>      
+<div style="text-align: center;">
+    <img src="~/pictures/@item.Picture"
+         height="240" width="150"
+         asp-append-version="true" />
 
-             </div>   
+    <p> <a asp-action="Details" asp-route-id="@item.BooksID"> @Html.DisplayFor(modelItem => item.Title) </a></p>
+
+    <p> @Html.DisplayFor(modelItem => item.Price) денари</p>
+    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+    {
+
+        <p>
+            <a asp-action="Edit" asp-route-id="@item.BooksID">Измени</a> |
+            <a asp-action="Delete" asp-route-id="@item.BooksID">Избриши</a>
+        </p>
+    }
+
+    </div>   
             }
     
         }
