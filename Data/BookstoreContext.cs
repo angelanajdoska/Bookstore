@@ -37,9 +37,8 @@ namespace Bookstore.Data
             .HasForeignKey(b => b.BookId).OnDelete(DeleteBehavior.NoAction);
 
             modelBuilder.Entity<User>().ToTable("User")
-              .HasOne(b => b.Book)
-            .WithMany(i => i.Users)
-            .HasForeignKey(b => b.BookId).OnDelete(DeleteBehavior.NoAction);
+            .Property(e => e.UserID)
+            .ValueGeneratedOnAdd();
 
             base.OnModelCreating(modelBuilder);
         }

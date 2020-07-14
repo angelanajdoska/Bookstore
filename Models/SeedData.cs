@@ -255,18 +255,7 @@ namespace Bookstore.Models
                 );
                 context.SaveChanges();
 
-                context.User.AddRange(
-                    new User
-                    {
-                        Name="Ангела Најдоска",
-                        Email="angela.najdoska17@gmail.com",
-                        PhoneNumber="123456789",
-                        Address="ул.Рузбелтова бр.3",
-                        City="Крушево",
-                        BookId=context.Book.Single(d => d.Title == "Малиот принц").BooksID
-                    }
-                    );
-                context.SaveChanges();
+               
 
             }
         }

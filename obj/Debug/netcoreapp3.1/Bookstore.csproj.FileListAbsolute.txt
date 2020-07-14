@@ -190,3 +190,4 @@ C:\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Book\OrderedBooks.cshtml.g.cs
 C:\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Create.cshtml.g.cs
 C:\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Account\AccessDenied.cshtml.g.cs
 C:\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Book\Text.cshtml.g.cs

@@ -77,24 +77,24 @@ namespace Bookstore.Controllers
         }
 
         public async Task<IActionResult> Details(int? id)
-{
-    if (id == null)
-    {
-        return NotFound();
-    }
+        {
+            if (id == null)
+            {
+             return NotFound();
+             }
 
-    var book = await _context.Book
-        .Include(s => s.Author)
-        .AsNoTracking()
-        .FirstOrDefaultAsync(m => m.BooksID == id);
+            var book = await _context.Book
+            .Include(s => s.Author)
+            .AsNoTracking()
+             .FirstOrDefaultAsync(m => m.BooksID == id);
 
-    if (book == null)
-    {
-        return NotFound();
-    }
+            if (book == null)
+             {
+                 return NotFound();
+             }
 
-    return View(book);
-}
+         return View(book);
+        }
         // GET: Book/Create
         [Authorize(Roles = "Admin")]
         public IActionResult Create()
@@ -276,20 +276,23 @@ namespace Bookstore.Controllers
         }
         public IActionResult Text()
         {
-            return Content("Вашата нарачка е успешно процесирана");
+            return View();
         }
         public IActionResult Order(int id)
         {
+            TempData["ID"] = id;
             ViewData["BookName"] = _context.Book.Where(t => t.BooksID == id).Select(t => t.Title).FirstOrDefault();
+            ViewData["BookPrice"] = _context.Book.Where(t => t.BooksID == id).Select(t => t.Price).FirstOrDefault();
+            string imageURL = "~/pictures/" + _context.Book.Where(t => t.BooksID == id).Select(t => t.Picture).FirstOrDefault();
+            ViewData["Image"] = imageURL;
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Order([Bind("Name, Email, PhoneNumber, Address, City, BookId, Book, Comment")] User order)
+        public async Task<IActionResult> Order([Bind("FullName, PhoneNumber, Address, City, BookId, Book")] User order)
         {
            if (ModelState.IsValid)
             {
-
                 _context.Add(order);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Text));
@@ -300,10 +303,10 @@ namespace Bookstore.Controllers
        
             public IActionResult OrderedBooks()
             {
-                IQueryable<User> user = _context.User;
+            int id = Convert.ToInt32(TempData["ID"]);
+            IQueryable<User> user = _context.User;
                 return View(user);
-            }
-        
+            }        
 
     }
 }

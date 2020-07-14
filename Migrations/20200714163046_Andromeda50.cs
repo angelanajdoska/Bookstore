@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Bookstore.Migrations
 {
-    public partial class andromeda46 : Migration
+    public partial class Andromeda50 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -118,23 +118,24 @@ namespace Bookstore.Migrations
                 columns: table => new
                 {
                     UserID = table.Column<string>(nullable: false),
-                    Name = table.Column<string>(nullable: false),
-                    Email = table.Column<string>(nullable: false),
+                    Name = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true),
                     Password = table.Column<string>(nullable: true),
                     PhoneNumber = table.Column<string>(nullable: true),
                     Address = table.Column<string>(nullable: true),
                     City = table.Column<string>(nullable: true),
-                    BookId = table.Column<int>(nullable: false),
-                    Comment = table.Column<string>(nullable: true)
+                    FullName = table.Column<string>(nullable: true),
+                    BooksID = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_User", x => x.UserID);
                     table.ForeignKey(
-                        name: "FK_User_Book_BookId",
-                        column: x => x.BookId,
+                        name: "FK_User_Book_BooksID",
+                        column: x => x.BooksID,
                         principalTable: "Book",
-                        principalColumn: "BooksID");
+                        principalColumn: "BooksID",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -310,9 +311,9 @@ namespace Bookstore.Migrations
                 column: "BookId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_User_BookId",
+                name: "IX_User_BooksID",
                 table: "User",
-                column: "BookId");
+                column: "BooksID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

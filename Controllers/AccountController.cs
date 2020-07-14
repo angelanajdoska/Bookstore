@@ -53,16 +53,8 @@ userValid, BookstoreContext context)
                     await signInManager.SignOutAsync();
                     Microsoft.AspNetCore.Identity.SignInResult result = await signInManager.PasswordSignInAsync(appUser, login.Password, false, false);
                     if (result.Succeeded)
-                    {
-                        if ((await userManager.IsInRoleAsync(appUser, "Admin")))
-                        {
-                            //return Redirect(login.ReturnUrl ?? "/");
-                            return RedirectToAction("Index", "Book", null);
-                        }
-                        if ((await userManager.IsInRoleAsync(appUser, "User")))
-                        {
-                            return RedirectToAction("Index", "Book", null);
-                        }                      
+                    {                      
+                      return RedirectToAction("Index", "Book", null);                                             
                     }
                 }
                 ModelState.AddModelError(nameof(login.Email), "Login Failed: Invalid Email or password");

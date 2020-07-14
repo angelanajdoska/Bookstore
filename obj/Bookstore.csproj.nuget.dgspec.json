@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Bookstore\\Bookstore.csproj": {}
+    "C:\\Bookstore\\Bookstore.csproj": {}
   },
   "projects": {
-    "c:\\Bookstore\\Bookstore.csproj": {
+    "C:\\Bookstore\\Bookstore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Bookstore\\Bookstore.csproj",
+        "projectUniqueName": "C:\\Bookstore\\Bookstore.csproj",
         "projectName": "Bookstore",
-        "projectPath": "c:\\Bookstore\\Bookstore.csproj",
+        "projectPath": "C:\\Bookstore\\Bookstore.csproj",
         "packagesPath": "C:\\Users\\Angela\\.nuget\\packages\\",
-        "outputPath": "c:\\Bookstore\\obj\\",
+        "outputPath": "C:\\Bookstore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Angela\\AppData\\Roaming\\NuGet\\NuGet.Config",

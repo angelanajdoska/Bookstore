@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bookstore.Migrations
 {
     [DbContext(typeof(BookstoreContext))]
-    [Migration("20200713230732_andromeda46")]
-    partial class andromeda46
+    [Migration("20200714163046_Andromeda50")]
+    partial class Andromeda50
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -212,26 +212,25 @@ namespace Bookstore.Migrations
             modelBuilder.Entity("Bookstore.Models.User", b =>
                 {
                     b.Property<string>("UserID")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("BookId")
+                    b.Property<int?>("BooksID")
                         .HasColumnType("int");
 
                     b.Property<string>("City")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Comment")
+                    b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
+                    b.Property<string>("FullName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
@@ -242,7 +241,7 @@ namespace Bookstore.Migrations
 
                     b.HasKey("UserID");
 
-                    b.HasIndex("BookId");
+                    b.HasIndex("BooksID");
 
                     b.ToTable("User");
                 });
@@ -405,11 +404,9 @@ namespace Bookstore.Migrations
 
             modelBuilder.Entity("Bookstore.Models.User", b =>
                 {
-                    b.HasOne("Bookstore.Models.Book", "Book")
+                    b.HasOne("Bookstore.Models.Book", null)
                         .WithMany("Users")
-                        .HasForeignKey("BookId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
+                        .HasForeignKey("BooksID");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
